@@ -1,0 +1,202 @@
+version: "3.1"
+
+nlu:
+
+- intent: greet
+  examples: |
+    - hello
+    - hi
+    - hy
+    - hey there 
+    - hey
+    - good morning
+    - good evening
+    - hi there
+    - greetings
+    - what's up
+    - hey bot
+    - hello assistant
+    - good afternoon
+    - is anyone there?
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you
+    - take care
+    - I'm done
+    - that's all
+    - thank you, bye
+    - I’ll talk to you later
+    - later
+    - catch you later
+    - bye for now
+    - signing off
+
+- intent: mood_great
+  examples: |
+    - I’m feeling great
+    - I’m okay
+    - all good
+    - I feel awesome
+    - doing fine
+    - I’m happy
+    - super good
+    - I’m energized
+    - I’m fantastic
+
+- intent: mood_unhappy
+  examples: |
+    - I’m feeling sick
+    - not feeling well
+    - I’m unwell
+    - I’m tired and sick
+    - this isn't good
+    - I feel horrible
+    - very weak
+    - I’m sad
+    - I’m not okay
+    - I’m feeling down
+    - I’m not feeling fine
+
+- intent: bot_challenge
+  examples: |
+    - are you real?
+    - are you a human?
+    - am I talking to an AI?
+    - are you a chatbot?
+    - who am I chatting with?
+    - are you human or bot?
+
+- intent: affirm
+  examples: |
+    - yes
+    - sure
+    - definitely
+    - correct
+    - absolutely
+    - yup
+    - that's right
+    - yeah
+
+- intent: deny
+  examples: |
+    - no
+    - nope
+    - not at all
+    - not really
+    - I don't agree
+    - never
+    - don't think so
+
+- intent: unknown
+  examples: |
+    - I don’t get it
+    - what do you mean?
+    - huh?
+    - can you repeat that?
+    - not sure what you're saying
+    - please explain
+    - I’m confused
+    - say that again
+    - what are you talking about?
+
+- intent: nlu_fallback
+  examples: |
+    - asdkjh
+    - qwerty
+    - lskdfj
+    - asdfghjkl
+    - 123456
+    - !@#$%^&*
+    - zxcvbnm
+    - nonsense text
+    - uierhgiueh
+
+- intent: malaria_overview
+  examples: |
+    - what is malaria?
+    - tell me about malaria
+    - definition of malaria
+    - malaria meaning
+    - explain malaria to me
+    - I want to know about malaria
+    - describe malaria infection
+    - what is plasmodium?
+    - give me details on malaria
+    - how malaria starts
+    - info on malaria
+    - what's malaria all about?
+    - what is mosquito-borne malaria?
+
+- intent: symptoms
+  examples: |
+    - I have fever and chills
+    - vomiting and headache
+    - I feel weak and nauseous
+    - shivering and body ache
+    - I'm sweating and tired
+    - I feel cold and hot at the same time
+    - is fatigue a symptom of malaria?
+    - do I have malaria symptoms?
+    - malaria signs in the body?
+    - signs of malaria in early stages
+    - experiencing dizziness and sweating
+    - headache and muscle pain — malaria?
+    - can malaria cause stomach upset?
+    - how do I know if it's malaria?
+
+- intent: prevention
+  examples: |
+    - how do I avoid malaria?
+    - malaria prevention methods
+    - how can I stay safe from mosquito bites?
+    - malaria protection tips
+    - what can stop malaria?
+    - prevent mosquito infection
+    - do bed nets help?
+    - malaria vaccines?
+    - what are antimalarial precautions?
+    - how to reduce malaria risk?
+    - is repellent effective against malaria?
+    - what are preventive drugs for malaria?
+
+- intent: treatment
+  examples: |
+    - how is malaria treated?
+    - malaria drugs and medication
+    - what’s the treatment for malaria?
+    - how do doctors treat malaria?
+    - best malaria cure
+    - artemisinin-based therapy?
+    - quinine use in malaria?
+    - malaria treatment at hospital
+    - can malaria go away with drugs?
+    - treatment options for malaria
+    - what pills are used for malaria?
+
+- intent: transmission
+  examples: |
+    - how does malaria spread?
+    - mosquito bite and malaria
+    - is malaria contagious?
+    - what transmits malaria?
+    - how do humans get malaria?
+    - how is malaria transmitted in the environment?
+    - from where does malaria come?
+    - malaria carrier mosquito?
+    - how does plasmodium enter the body?
+
+- intent: causes
+  examples: |
+    - what causes malaria?
+    - why do people get malaria?
+    - root cause of malaria
+    - how do mosquitoes cause malaria?
+    - source of malaria infection
+    - what is plasmodium parasite?
+    - reasons for malaria outbreak
+    - how does malaria occur?
+    - is dirty water a cause of malaria?
+

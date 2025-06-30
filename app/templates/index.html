@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malaria Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="chat-wrapper">
+        <div class="chat-header">Malaria Assistant</div>
+        <div id="chat-box" class="chat-box"></div>
+        <form id="chat-form" class="chat-form">
+            <input type="text" id="message" name="message" placeholder="Type your message..." autocomplete="off" required>
+            <button type="submit">&#9658;</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById("chat-form");
+        const chatBox = document.getElementById("chat-box");
+
+        function getCurrentTime() {
+            const now = new Date();
+            return now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        }
+
+        function isUserAtBottom() {
+            return chatBox.scrollHeight - chatBox.scrollTop <= chatBox.clientHeight + 50;
+        }
+
+        function scrollToBottom() {
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function addMessage(sender, text) {
+            const wasAtBottom = isUserAtBottom();
+
+            const div = document.createElement("div");
+            div.className = `chat ${sender}`;
+            div.innerHTML = `
+                <div class="msg">${text}</div>
+                <div class="time">${getCurrentTime()}</div>
+            `;
+            chatBox.appendChild(div);
+
+            if (wasAtBottom) scrollToBottom();
+        }
+
+        function addBotReply(data) {
+            const wasAtBottom = isUserAtBottom();
+
+            const div = document.createElement("div");
+            div.className = "chat bot";
+
+            let innerHtml = `<div class="msg">${data.reply}</div>`;
+
+            // Add quick reply buttons if any
+            if (data.buttons) {
+                innerHtml += `<div class="buttons">`;
+                data.buttons.forEach(btn => {
+                    innerHtml += `<button class="quick-reply" onclick="sendQuickReply('${btn.payload}')">${btn.title}</button>`;
+                });
+                innerHtml += `</div>`;
+            }
+
+            innerHtml += `<div class="time">${getCurrentTime()}</div>`;
+            div.innerHTML = innerHtml;
+            chatBox.appendChild(div);
+
+            if (wasAtBottom) scrollToBottom();
+        }
+
+        async function sendQuickReply(payload) {
+            addMessage("user", payload);
+            const res = await fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: `message=${encodeURIComponent(payload)}`
+            });
+            const data = await res.json();
+            addBotReply(data);
+        }
+
+        form.onsubmit = async (e) => {
+            e.preventDefault();
+            const msgInput = document.getElementById("message");
+            const msg = msgInput.value.trim();
+            if (!msg) return;
+
+            addMessage("user", msg);
+            msgInput.value = "";
+
+            // Show typing indicator
+            const typing = document.createElement("div");
+            typing.className = "chat bot typing";
+            typing.innerHTML = `<div class="msg">Typing...</div>`;
+            chatBox.appendChild(typing);
+            scrollToBottom();
+
+            const res = await fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: `message=${encodeURIComponent(msg)}`
+            });
+
+            const data = await res.json();
+            typing.remove();  // Remove typing bubble
+            addBotReply(data);
+        };
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - mood_great
+  - mood_unhappy
+  - malaria_overview
+  - symptoms
+  - prevention
+  - treatment
+  - transmission
+  - causes
+  - affirm
+  - deny
+  - bot_challenge
+  - unknown
+  - nlu_fallback
+
+responses:
+  utter_greet:
+    - text: "Hi there! 👋 How can I assist you today?"
+      buttons:
+        - title: "🦠 What is malaria?"
+          payload: "/malaria_overview"
+        - title: "🤒 Check symptoms"
+          payload: "/symptoms"
+        - title: "🛡️ Prevention tips"
+          payload: "/prevention"
+        - title: "💊 Treatment"
+          payload: "/treatment"
+        - title: "🦟 Transmission"
+          payload: "/transmission"
+        - title: "💡 Causes"
+          payload: "/causes"  
+
+
+  utter_goodbye:
+    - text: "Goodbye! Stay safe and healthy. 🌿"
+    - text: "Take care! 👋"
+    - text: "Goodbye! Stay protected from malaria. 🌿"
+    - text: "Take care! Remember to use mosquito nets at night."
+    - text: "Bye! Reach out again if you have more questions."
+
+  utter_mood_great:
+    - text: "Awesome! Keep up the good vibes. 💪"
+    - text: "Glad to hear that you're feeling great! 😊"
+    - text: "Awesome! 😊 Keep the positive energy!"
+    - text: "That's great to hear! Stay healthy."
+    - text: "Wonderful! Let me know if you need help with malaria info."  
+
+  utter_mood_unhappy:
+    - text: "I'm sorry you're not feeling well. Rest and take care."
+    - text: "Health is wealth, please stay hydrated and see a doctor if needed."
+    - text: "I'm sorry to hear that. Taking care of your health is important."
+    - text: "Oh no! I hope I can make your day better. Do you want to check symptoms?"
+    - text: "That doesn't sound good. Let me know how I can assist."
+
+  utter_malaria_overview:
+    - text: "Malaria is a deadly disease caused by Plasmodium parasites, transmitted through female Anopheles mosquitoes."
+    - text: "It's a mosquito-borne illness that causes fever, chills, and flu-like symptoms. Malaria is preventable and treatable."
+    - text: "Malaria affects millions globally. It spreads via infected mosquito bites and is more common in tropical areas."
+
+  utter_symptoms:
+    - text: "Typical malaria symptoms include fever, chills, headache, muscle pain, and fatigue. It’s best to get tested."
+    - text: "Feeling tired, cold, or vomiting? Those might be malaria symptoms. Please consult a health professional."
+    - text: "Your symptoms may be malaria-related. Early diagnosis is important—please visit a clinic."
+
+  utter_prevention:
+    - text: "To prevent malaria, sleep under treated nets, wear long sleeves, and use mosquito repellent."
+    - text: "Preventive measures include clearing stagnant water and avoiding mosquito bites."
+    - text: "Using insecticide-treated nets and staying indoors during peak mosquito times helps reduce malaria risk."
+
+  utter_treatment:
+    - text: "Malaria treatment involves antimalarial medications like ACTs. Start treatment early!"
+    - text: "Doctors typically prescribe artemisinin-based therapies. Avoid self-medication."
+    - text: "Visit a clinic immediately. Malaria needs prompt treatment with prescribed drugs."
+
+  utter_transmission:
+    - text: "Malaria spreads through infected mosquito bites—mostly by female Anopheles mosquitoes."
+    - text: "Once bitten, parasites enter the bloodstream and multiply, leading to infection."
+    - text: "It's transmitted by mosquito vectors—one bite from an infected mosquito can cause malaria."
+
+  utter_causes:
+    - text: "Malaria is caused by parasites (mainly Plasmodium falciparum) transmitted via mosquito bites."
+    - text: "The root cause of malaria is exposure to infected mosquitoes in endemic regions."
+    - text: "Human malaria is caused by four Plasmodium species—most deadly is P. falciparum."
+ 
+
+  utter_affirm:
+    - text: "Great! Please Click on the desired button below to go ahead!."
+      buttons:
+        - title: "🦠 What is malaria?"
+          payload: "/malaria_overview"
+        - title: "🤒 Check symptoms"
+          payload: "/symptoms"
+        - title: "🛡️ Prevention tips"
+          payload: "/prevention"
+        - title: "💊 Treatment"
+          payload: "/treatment"
+        - title: "🦟 Transmission"
+          payload: "/transmission"
+        - title: "💡 Causes"
+          payload: "/causes"   
+
+  utter_deny:
+    - text: "Alright, let me know if you change your mind."
+    - text: "No worries. You can ask me something else."
+    - text: "No problem. Let me know if you change your mind."
+    - text: "Got it. I'm here if you need anything else!"
+    - text: "Okay. Maybe later you'll have a question. 😊"
+
+  utter_bot_challange:
+    - text: "I'm your malaria assistant chatbot 🤖, built with AI to support your health questions!"
+    - text: "Yes, I am an intelligent chatbot assistant here to help with malaria questions!"
+    - text: "I'm a malaria AI assistant designed to guide you with trusted health info."
+
+  utter_unknown:
+    - text: "Sorry, I didn’t get that. Could you please rephrase your question?"
+
+
+  utter_nlu_fallback:
+    - text: "Hmm, I didn’t quite get that. You can try asking related malaria questions or choose from below!."
+      buttons:
+        - title: "🦠 What is malaria?"
+          payload: "/malaria_overview"
+        - title: "🤒 Check symptoms"
+          payload: "/symptoms"
+        - title: "🛡️ Prevention"
+          payload: "/prevention"
+        - title: "💊 Treatment"
+          payload: /treatment
+        - title: "🦟 Transmission"
+          payload: /transmission
+        - title: "💡 Causes"
+          payload: "/causes"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

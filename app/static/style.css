@@ -1,0 +1,112 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: url("malaria2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.chat-wrapper {
+    background: white;
+    height: 90%;
+    width: 50vw;
+    right: 25px;
+    position: fixed;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.chat-header {
+    background-color: #6a5acd;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+.chat-box {
+    flex-grow: 1;
+    height: 450px;
+    padding: 15px;
+    overflow-y: auto;
+    background: #f9f9f9;
+}
+.chat {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.chat.user .msg {
+    align-self: flex-end;
+    background: #6a5acd;
+    color: white;
+    border-radius: 15px 15px 0 15px;
+    padding: 10px 15px;
+    max-width: 70%;
+}
+.chat.bot .msg {
+    align-self: flex-start;
+    background: #e0e0e0;
+    color: #333;
+    border-radius: 15px 15px 15px 0;
+    padding: 10px 15px;
+    max-width: 70%;
+}
+.time {
+    font-size: 10px;
+    color: gray;
+    margin-top: 3px;
+    align-self: flex-end;
+}
+.chat.bot .time {
+    align-self: flex-start;
+}
+.chat-form {
+    display: flex;
+    border-top: 1px solid #ccc;
+    background: #fff;
+}
+.chat-form input {
+    flex: 1;
+    border: none;
+    padding: 15px;
+    font-size: 14px;
+    border-radius: 0;
+    outline: none;
+}
+.chat-form button {
+    background: #6a5acd;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.buttons {
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.quick-reply {
+    background-color: #dcdcdc;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+    margin: 4px 4px 0 0;
+    cursor: pointer;
+    font-size: 13px;
+}
+.quick-reply:hover {
+    background-color: #c8c8c8;
+}
+
+.typing .msg {
+    font-style: italic;
+    color: #888;
+}

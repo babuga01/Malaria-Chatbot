@@ -1,0 +1,48 @@
+version: "3.1"
+
+stories:
+
+- story: Malaria overview inquiry
+  steps:
+    - intent: malaria_overview
+    - action: utter_malaria_overview
+
+- story: Symptom checking path
+  steps:
+    - intent: symptoms
+    - action: utter_symptoms
+
+- story: Prevent malaria story
+  steps:
+    - intent: prevention
+    - action: utter_prevention
+
+- story: Treatment of malaria
+  steps:
+    - intent: treatment
+    - action: utter_treatment
+
+- story: Transmission path
+  steps:
+    - intent: transmission
+    - action: utter_transmission
+
+- story: Causes path
+  steps:
+    - intent: causes
+    - action: utter_causes
+
+- story: Goodbye path
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: Handle unknown message
+  steps:
+    - intent: unknown
+    - action: utter_unknown
+
+- story: Handle fallback gracefully
+  steps:
+    - intent: nlu_fallback
+    - action: utter_nlu_fallback

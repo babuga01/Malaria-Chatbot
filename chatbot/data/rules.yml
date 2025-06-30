@@ -1,0 +1,78 @@
+version: "3.1"
+
+rules:
+
+- rule: Greet the user
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- rule: Say goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- rule: User is happy
+  steps:
+    - intent: mood_great
+    - action: utter_mood_great
+
+- rule: User is unhappy
+  steps:
+    - intent: mood_unhappy
+    - action: utter_mood_unhappy
+
+- rule: Show bot identity
+  steps:
+    - intent: bot_challenge
+    - action: utter_bot_challange
+
+- rule: Handle fallback
+  steps:
+    - intent: nlu_fallback
+    - action: utter_nlu_fallback
+
+- rule: Handle unknown queries
+  steps:
+    - intent: unknown
+    - action: utter_unknown
+
+- rule: Respond to malaria overview
+  steps:
+    - intent: malaria_overview
+    - action: utter_malaria_overview
+
+- rule: Respond to symptom check
+  steps:
+    - intent: symptoms
+    - action: utter_symptoms
+
+- rule: Respond to prevention request
+  steps:
+    - intent: prevention
+    - action: utter_prevention
+
+- rule: Respond to treatment request
+  steps:
+    - intent: treatment
+    - action: utter_treatment
+
+- rule: Respond to transmission request
+  steps:
+    - intent: transmission
+    - action: utter_transmission
+
+- rule: Respond to causes request
+  steps:
+    - intent: causes
+    - action: utter_causes
+
+- rule: Affirmative response
+  steps:
+    - intent: affirm
+    - action: utter_affirm
+
+- rule: Negative response
+  steps:
+    - intent: deny
+    - action: utter_deny

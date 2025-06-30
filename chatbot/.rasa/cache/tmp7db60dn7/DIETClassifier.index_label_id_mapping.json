@@ -1,0 +1,17 @@
+{
+  "0": "affirm",
+  "1": "bot_challenge",
+  "2": "causes",
+  "3": "deny",
+  "4": "goodbye",
+  "5": "greet",
+  "6": "malaria_overview",
+  "7": "mood_great",
+  "8": "mood_unhappy",
+  "9": "nlu_fallback",
+  "10": "prevention",
+  "11": "symptoms",
+  "12": "transmission",
+  "13": "treatment",
+  "14": "unknown"
+}
